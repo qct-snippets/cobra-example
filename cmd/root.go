@@ -24,6 +24,7 @@ import (
 )
 
 var cfgFile string
+var key1 string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -57,6 +58,7 @@ func init() {
 	// will be global for your application.
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cobra-example.yaml)")
+	rootCmd.PersistentFlags().StringVar(&key1, "key1", "", "load system environment variable")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
@@ -79,10 +81,12 @@ func initConfig() {
 		viper.SetConfigName(".cobra-example")
 	}
 
+	viper.SetEnvPrefix("env")
 	viper.AutomaticEnv() // read in environment variables that match
 
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {
 		fmt.Fprintln(os.Stderr, "Using config file:", viper.ConfigFileUsed())
 	}
+	fmt.Println("Read key1:", viper.Get("key1"))
 }
