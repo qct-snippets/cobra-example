@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.0](https://github.com/qct-snippets/cobra-example/compare/v0.0.1...v0.1.0) (2023-04-25)
+
+
+### Features
+
+* go-ossf-slsa3-publish ([cd8707c](https://github.com/qct-snippets/cobra-example/commit/cd8707c9c6333d4b04cec250e03b23a74f5851c1))
+
+
+### Bug Fixes
+
+* build-test name ([a56fc5c](https://github.com/qct-snippets/cobra-example/commit/a56fc5ce8e873a1f62be86f3ffc945808b4edc7d))
+
 ## 0.0.1 (2023-04-25)
 
 
